@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 08:07:36 by samin             #+#    #+#             */
-/*   Updated: 2020/07/06 08:27:56 by samin            ###   ########.fr       */
+/*   Created: 2020/07/06 23:26:11 by samin             #+#    #+#             */
+/*   Updated: 2020/07/06 23:38:15 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
-#include <unistd.h>
-
-void	ft_print_comb2(int n)
+void ft_swap(int *a, int *b)
 {
-	int fn = 1000000000;
-	
-	while(fn > 0)
-	{
-		
-		fn /= 10;
-	}
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
-int		main(void)
+int main()
 {
-	ft_print_comb2(2);
+	int A = 1;
+	int B = 2;
+	int *a = &A;
+	int *b = &B;
+
+
+	ft_swap(a, b);
+
+	printf("a = %d \n b = %d", *a, *b);
 }

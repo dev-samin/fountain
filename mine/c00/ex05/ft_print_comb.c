@@ -3,54 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samin </var/mail/samin>                    +#+  +:+       +#+        */
+/*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/05 18:35:13 by samin             #+#    #+#             */
-/*   Updated: 2020/07/06 05:02:19 by samin            ###   ########.fr       */
+/*   Created: 2020/07/06 15:26:23 by samin             #+#    #+#             */
+/*   Updated: 2020/07/06 15:32:29 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
 void	ft_print_comb(void)
 {
-	char num1;
-   	char num2;
-  	char num3;
-	char p;
+	char	num[5];
 
-	num1 = '0';
-	num2 = '0';
-	num3 = '0';
-	p = ',';
-
-	while(num1 <= '9')
+	num[0] = '0';
+	num[3] = ',';
+	num[4] = ' ';
+	while (num[0] <= '9')
 	{
-		while(num2 <= '9')
+		num[1] = num[1] + 1;
+		while (num[1] <= '9')
 		{
-			while(num3 <= '9')
+			num[2] = num[2] + 1;
+			while (num[2] <= '9')
 			{
-				write(1, &num1, 1);
-				write(1, &num2, 1);
-				write(1, &num3, 1);
-				num3++;
+				if (num[0] != num[1] && num[1] != num[2] && num[2] != num[0])
+				{
+					write(1, &num[0], 1);
+					write(1, &num[1], 1);
+					write(1, &num[2], 1);
+					write(1, &num[3], 1);
+					write(1, &num[4], 1);
+				}
 			}
-		
-			write(1, &num1, 1);
-			write(1, &num2, 1);
-			write(1, &num3, 1);
-			num2++;
 		}
-		write(1, &num1, 1);
-		write(1, &num2, 1);
-		write(1, &num3, 1);
-		num1++;
 	}
 }
 
-int	main(void)
+int		main(void)
 {
 	ft_print_comb();
-	return 0;
+	return (0);
 }

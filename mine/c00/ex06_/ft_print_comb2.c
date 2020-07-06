@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 05:02:59 by samin             #+#    #+#             */
-/*   Updated: 2020/07/06 07:51:33 by samin            ###   ########.fr       */
+/*   Created: 2020/07/06 08:07:36 by samin             #+#    #+#             */
+/*   Updated: 2020/07/06 19:04:53 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-void	ft_putnbr(int nb)
+void ft_print_comb2(void)
 {
-	char	beg;
-	int		fn;
-	int		tmp;
 
-	fn = 1000000000;
-	while (fn > 0)
-	{
-		beg = nb / fn + 48;
-		if (beg != '0')
-		{
-			write(1, &beg, 1);
-		}
-		nb %= fn;
-		fn /= 10;
-	}
 }
 
 int		main(void)
 {
-	ft_putnbr(111314131);
-	return (0);
+	write(1, string(), 1 );
+	return 0;
 }
