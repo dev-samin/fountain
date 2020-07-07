@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: samin </var/mail/samin>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 23:26:11 by samin             #+#    #+#             */
-/*   Updated: 2020/07/06 23:38:15 by samin            ###   ########.fr       */
+/*   Created: 2020/07/07 16:33:12 by samin             #+#    #+#             */
+/*   Updated: 2020/07/07 20:52:05 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-void ft_swap(int *a, int *b)
+#include <unistd.h>
+
+int	ft_strlen(char *str)
 {
-	int tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
+	int i;
+	int cnt;
 
-int main()
-{
-	int A = 1;
-	int B = 2;
-	int *a = &A;
-	int *b = &B;
-
-
-	ft_swap(a, b);
-
-	printf("a = %d \n b = %d", *a, *b);
+	i = 0;
+	cnt = 0;
+	while (*(str + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: samin </var/mail/samin>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 21:48:18 by samin             #+#    #+#             */
-/*   Updated: 2020/07/07 20:40:31 by samin            ###   ########.fr       */
+/*   Created: 2020/07/07 20:44:32 by samin             #+#    #+#             */
+/*   Updated: 2020/07/07 20:48:30 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	*div = a / b;
-	*mod = a % b;
+	int quo;
+	int remain;
+
+	quo = *a / *b;
+	remain = *a % *b;
+	*a = quo;
+	*b = remain;
 }
