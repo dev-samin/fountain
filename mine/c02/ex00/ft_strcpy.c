@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 08:07:36 by samin             #+#    #+#             */
-/*   Updated: 2020/07/06 19:04:53 by samin            ###   ########.fr       */
+/*   Created: 2020/07/08 14:15:46 by samin             #+#    #+#             */
+/*   Updated: 2020/07/08 21:50:48 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-void ft_print_comb2(void)
+char	*ft_strcpy(char *dest, char *src)
 {
+	int i;
 
-}
-
-int		main(void)
-{
-	write(1, string(), 1 );
-	return 0;
+	i = 0;
+	while (src[i] != 0)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

@@ -6,11 +6,11 @@
 /*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 13:18:41 by samin             #+#    #+#             */
-/*   Updated: 2020/07/04 16:51:15 by samin            ###   ########.fr       */
+/*   Updated: 2020/07/08 16:13:18 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistnd>
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {

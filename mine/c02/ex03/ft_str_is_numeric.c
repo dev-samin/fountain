@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 16:15:18 by samin             #+#    #+#             */
-/*   Updated: 2020/07/08 16:21:40 by samin            ###   ########.fr       */
+/*   Created: 2020/07/08 17:28:26 by samin             #+#    #+#             */
+/*   Updated: 2020/07/08 17:38:00 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-void	ft_print_numbers(void)
+int ft_str_is_numeric(char *str)
 {
-	int num;
+	int i;
 
-	num = '0';
-	while (num <= '9')
+	i = 0;
+	if (str[0] == '\0' )
+		return 1;
+	while (str[i] != '\0')
 	{
-		write(1, &num, 1);
-		num++;
+		if(str[i] < 60 || str[i] > 71)
+			return 0;
+		i++;
 	}
+	return 1;
 }

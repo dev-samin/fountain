@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 16:15:18 by samin             #+#    #+#             */
-/*   Updated: 2020/07/08 16:21:40 by samin            ###   ########.fr       */
+/*   Created: 2020/07/08 18:36:33 by samin             #+#    #+#             */
+/*   Updated: 2020/07/08 18:54:14 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-void	ft_print_numbers(void)
+char *ft_strlowcase(char *str)
 {
-	int num;
-
-	num = '0';
-	while (num <= '9')
+	int i;
+	   
+	i =	0;
+	while(str[i] != '\0')	
 	{
-		write(1, &num, 1);
-		num++;
+		if(str[i] > 65 && str[i] < 90)
+		{
+			str[i] += 32;
+		}
+		i++;
 	}
+	return (str);
 }

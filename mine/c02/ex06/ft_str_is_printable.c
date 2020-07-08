@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 16:15:18 by samin             #+#    #+#             */
-/*   Updated: 2020/07/08 16:21:40 by samin            ###   ########.fr       */
+/*   Created: 2020/07/08 18:15:43 by samin             #+#    #+#             */
+/*   Updated: 2020/07/08 18:33:32 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-void	ft_print_numbers(void)
+int ft_str_is_printable(char *str)
 {
-	int num;
+	int i;
+	
+	i = 0;
+	if (str[0] == '\0')
+		return 1;
 
-	num = '0';
-	while (num <= '9')
-	{
-		write(1, &num, 1);
-		num++;
+	while (str[i] != '\0'){
+		if(str[i] >= 0 && str[i] <= 32 )
+			return 0;
+		i++;
 	}
+	return 1;
 }

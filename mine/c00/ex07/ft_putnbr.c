@@ -6,7 +6,7 @@
 /*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 05:02:59 by samin             #+#    #+#             */
-/*   Updated: 2020/07/06 15:45:39 by samin            ###   ########.fr       */
+/*   Updated: 2020/07/08 16:12:54 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 void	ft_putnbr(int nb)
 {
-	char	beg;
-	int		fn;
-	int		tmp;
+	int		intnbr;
+	char	ngt;
+	char	quo;
+	int		mod;
 
-	fn = 1000000000;
-	while (fn > 0)
+	intnbr = 100000000;
+	mod = nb;
+	ngt = '-';
+	if (nb < 0)
 	{
-		beg = nb / fn + 48;
-		if (beg != '0')
-		{
-			write(1, &beg, 1);
-		}
-		nb %= fn;
-		fn /= 10;
+		mod *= -1;
+		write(1, &ngt, 1);
+	}
+	while (intnbr >= 1)
+	{
+		quo = mod / intnbr + '0';
+		mod = mod % intnbr;
+		intnbr /= 10;
+		write(1, &quo, 1);
 	}
 }
 
-int		main(void)
+int main()
 {
-	ft_putnbr(111314131);
-	return (0);
+    ft_putnbr(0);
 }

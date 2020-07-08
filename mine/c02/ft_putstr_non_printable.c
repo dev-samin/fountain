@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/06 15:26:23 by samin             #+#    #+#             */
-/*   Updated: 2020/07/08 16:27:00 by samin            ###   ########.fr       */
+/*   Created: 2020/07/08 20:55:15 by samin             #+#    #+#             */
+/*   Updated: 2020/07/08 23:20:17 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_comb(void)
+char	hex(char key)
 {
-	char	num[5];
+	char	hextable[];
+	int		dec;
+	int		idx;
 
-	num[0] = '0';
-	num[3] = ',';
-	num[4] = ' ';
-	while (num[0] <= '7')
+	hextable = "0123456789ABCDEF";
+	dec = key;
+	if (dec <= 16)
+		idx = dec % 16;
+	else
+		idx = dec / 16;
+	return (hextable[idx]);
+}
+
+void	ft_putstr_non_printable(char *str)
+{
+	int		i;
+	char	s0[2];
+
+	s0[0] = 92;
+	s0[1] = 48;
+	i = 0;
+	while (str[i] != '\0')
 	{
-		num[1] = num[0] + 1;
-		while (num[1] <= '8')
+		if ((str[i] >= 0 && str[i] <= 31) || str[i] == 127)
 		{
-			num[2] = num[1] + 1;
-			while (num[2] <= '9')
-			{
-				write(1, &num[0], 5);
-				num[2]++;
-			}
-			num[1]++;
+			str[i] = hex(str[i]);
+			write(1, &s0[0], 2);
 		}
-		num[0]++;
+		write(1, &str[i], 1);
+		i++;
 	}
 }

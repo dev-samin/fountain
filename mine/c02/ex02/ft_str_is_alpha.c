@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 16:15:18 by samin             #+#    #+#             */
-/*   Updated: 2020/07/08 16:21:40 by samin            ###   ########.fr       */
+/*   Created: 2020/07/08 17:11:58 by samin             #+#    #+#             */
+/*   Updated: 2020/07/08 17:26:55 by samin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void	ft_print_numbers(void)
+int	ft_str_is_alpha(char *str)
 {
-	int num;
-
-	num = '0';
-	while (num <= '9')
+	int i;
+   	
+	i = 0;
+	if(str[0] == '\0')
+		return 1;
+	while(str[i] != '\0' )
 	{
-		write(1, &num, 1);
-		num++;
+		if(str[i] <= 65 ||  str[i] >= 122 )
+			return 0;
+		i++;
 	}
+	return 1;
 }
