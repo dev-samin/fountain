@@ -1,8 +1,23 @@
-char	*buf_row(char *buf, int row) //인자로 buf포인터와 row를 받고 row에 원하는 행을 입력하면 해당 행의 포인터 주소 반환
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   struct.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: samin </var/mail/samin>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/19 23:19:40 by samin             #+#    #+#             */
+/*   Updated: 2020/07/19 23:31:09 by samin            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <rush02.h>
+#include <fcntl.h>
+
+char	*buf_row(char *buf, int row)
 {
 	if (row == 0)
 	{
-		printf("%s", buf);
 		return (buf);
 	}
 	else
@@ -10,12 +25,11 @@ char	*buf_row(char *buf, int row) //인자로 buf포인터와 row를 받고 row�
 		while (*buf != '\n')
 			buf++;
 		buf_row(buf + 1, row - 1);
-		//printf("%s \n", buf);
 	}
 	return (" ");
 }
 
-char *dict_to_buf(void) //numbers.dict 내용을 buf 변수에 넣고 buf의 포인터 반환  
+char	*dict_to_buf(void)  
 {
 	int fd;
 	int r;
@@ -31,9 +45,7 @@ char *dict_to_buf(void) //numbers.dict 내용을 buf 변수에 넣고 buf의 포
 	return (buf);
 }
 
-
-//buf에 있는 내용을 행별로 배열에 저장
-char *cut_article(char *buf, char **tmp)
+void	cut_article(char *buf, char **tmp)
 {
     int i;
     int colcnt;
@@ -42,8 +54,7 @@ char *cut_article(char *buf, char **tmp)
     i = 0;
     rowcnt = 0;
     colcnt = 0;
-    
-   
+       
     while(buf[i] != '\0')
     {
         if(buf[i] == '\n')
@@ -56,7 +67,5 @@ char *cut_article(char *buf, char **tmp)
         tmp[rowcnt][colcnt] = buf[i];
         colcnt++;
         i++;
-        printf("%s  %d\n", tmp[1], colcnt );
     }
-    return " ";
 }
